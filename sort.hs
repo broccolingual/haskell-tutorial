@@ -4,8 +4,8 @@ quickSort [] = []
 quickSort [x] = [x]
 quickSort (x:xs) =
   quickSort l ++ [x] ++ quickSort r
-  where l = [a | a <- xs, a <= x]
-        r = [a | a <- xs, a > x]
+  where l = filter ( <= x) xs
+        r = filter ( > x) xs 
 
 -- selection sort
 selectionSort :: (Ord a) => [a] -> [a]
